@@ -907,6 +907,7 @@ function openBalance(exId, message){
     + fieldLbl('미실현 손익 (USDT)', signedIn('f-upnl', '0.00'),
       hasPos ? '포지션 화면의 손익(PnL)을 같은 순간에 보고 입력하세요. 이 거래소 모든 포지션 손익의 합계, 손실이면 마이너스(-)' : '이 거래소에 포지션이 없으면 0이에요')
     + '<div class="ro">지갑 잔고 = 총자산 − 미실현 손익 = <b id="f-wallet">—</b> USDT</div>'
+    + '<div id="f-balnote"></div>'
     + `<p class="tiny">지금 저장된 지갑 잔고: ${isNum(data.exchanges[exId].wallet) ? money(data.exchanges[exId].wallet) + ' USDT' : '없음'}${hasPos ? ` · 참고: 앱이 계산한 현재 미실현 손익 ${signed(exchangeView(exId).upnl)} USDT` : ''}</p>`
     + '<div id="f-err"></div>',
     '<button class="primary" id="f-save">잔고 저장</button>');
@@ -946,7 +947,14 @@ function updRecord(){
 }
 
 function updBalance(){
-  $('#f-wallet').textContent = money(walletFromTotal(parseNum($('#f-total').value), parseNum($('#f-upnl').value)));
+  const upnl = parseNum($('#f-upnl').value);
+  $('#f-wallet').textContent = money(walletFromTotal(parseNum($('#f-total').value), upnl));
+  // 앱에 기록된 포지션이 없는데 손익을 넣으면, 그 손익은 순자산에 반영되지 않음 → 안내
+  const noPos = positionsOf(F.ex).length === 0;
+  $('#f-balnote').innerHTML = noPos && isNum(upnl) && Math.abs(upnl) >= 0.005
+    ? `<div class="warn">이 거래소에는 앱에 기록된 포지션이 없어서, 이 미실현 손익은 순자산에 반영되지 않아요. 순자산이 지갑 잔고(총자산 − 손익)로만 보여요.<br>거래소에 포지션이 있다면 ① 기존 포지션 기록으로 옮겨 적으세요. 지갑 잔고도 함께 저장돼요.</div>
+       <button class="btn" data-menu="record">① 기존 포지션 기록으로 가기</button>`
+    : '';
 }
 
 // 가용 금액 계산 과정 표시 (사용자가 어떻게 나온 숫자인지 이해할 수 있게)
