@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="선물손익">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#f4f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f141b" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADjElEQVR42u3dr04jURTA4VNCsgJVDJg1GBCbIPcZSHD7MjwCL7OuCc+AJEGsWlNVUxQCt6LZpmnpQOlMZ+653081pAkJ/Thz529H4/PLkN7ryJ9AcAgOwSE4BIfgEByCQ3AIDgkOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsEhOCQ4BIfgEByCQ3AIDsGhLB37Ewyq8e+fy9cvvx5NDtmsCA7BITgEhwSH4BAc6rSRb2qK/o6BfrnDHDw1OVI1m8zh0FYZLfqAI+HMmE3mrRCBwyYGjvocnN2ewkFGJzLgsO2AozIZrYwNOMiAo5palAGHRSgcufrz7eEAMuBIIsPeirbK6GJswGERCoelBhxkwEGGBan6WITCQQYcSbt6u7FZMTYeepQBBxlw2D2BI7eMA48NOCxC4bDUgIMMOCxCw3NIo/TneJa4CDU5yIDD7gkcFqFwkAGH3RN7K4X298f35euL52m+RajJYREKh6UGHGRYc8Suz/FseGdfB087fdaKyRH5nqgxzLEBBxl2ZWPIt7k++gJAY6Ofe09MjujoMNeX37l6fKxQGSaH3RM48j7wDw7PWoHDIrTyBWlbZzXJsLdSZCf3TzHs7+eyWRmWjOLGBhxkwGH3BI4Bjo1yZcBBBhwD3j2BwyIUDiWSEV0cBGv9lHfscu3u4sKq5Ytexsbr3XXEFI4Y2lXdqz6i46vxtstI0nEltxauv2Gy7+TPughNhWOTxSfvQV07N7a00rxFW2wKGxehUziy3Yu8zUpVuyd5cHR6l/rmOffmzz6fjIJxNMhYW3u2Zeg/l3klMkrFsdPzCzZ/2O7IySqjPByzyTxi3ydbXL3drF5TU/QF4nB8/Cnucxhj7V9/JyuJx0ZJODqS8ZnPe/NXv95dn9w/5ZZRDI4GGWu3m3Zxr+nmaLl4nkZ2GQXg+IhFOKkWdZ6VHaCMqjoiQ4XhIMOaIyo/eQFHO+fByah6s0KGydGtjIK+gMfkMDNMDstPOAwMm5WeZWS6gBsOMuAgw5qjFxlYVI3DwLBZIQMOMuAgo+ZG4/PLOPg1GQsWiR9Sa3LsJUOV4iADDlf4heMcFX3DiDrBYWDYrJABBxlqBcc2AWTA8Y6Ds9tTMixIdx4YjorWeJxjYcLACOdWZHIIDgkOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsEhOCQ4BIfgEBw6VP8AvlJvR1zeCWYAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADjElEQVR42u3dr04jURTA4VNCsgJVDJg1GBCbIPcZSHD7MjwCL7OuCc+AJEGsWlNVUxQCt6LZpmnpQOlMZ+653081pAkJ/Thz529H4/PLkN7ryJ9AcAgOwSE4BIfgEByCQ3AIDgkOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsEhOCQ4BIfgEByCQ3AIDsGhLB37Ewyq8e+fy9cvvx5NDtmsCA7BITgEhwSH4BAc6rSRb2qK/o6BfrnDHDw1OVI1m8zh0FYZLfqAI+HMmE3mrRCBwyYGjvocnN2ewkFGJzLgsO2AozIZrYwNOMiAo5palAGHRSgcufrz7eEAMuBIIsPeirbK6GJswGERCoelBhxkwEGGBan6WITCQQYcSbt6u7FZMTYeepQBBxlw2D2BI7eMA48NOCxC4bDUgIMMOCxCw3NIo/TneJa4CDU5yIDD7gkcFqFwkAGH3RN7K4X298f35euL52m+RajJYREKh6UGHGRYc8Suz/FseGdfB087fdaKyRH5nqgxzLEBBxl2ZWPIt7k++gJAY6Ofe09MjujoMNeX37l6fKxQGSaH3RM48j7wDw7PWoHDIrTyBWlbZzXJsLdSZCf3TzHs7+eyWRmWjOLGBhxkwGH3BI4Bjo1yZcBBBhwD3j2BwyIUDiWSEV0cBGv9lHfscu3u4sKq5Ytexsbr3XXEFI4Y2lXdqz6i46vxtstI0nEltxauv2Gy7+TPughNhWOTxSfvQV07N7a00rxFW2wKGxehUziy3Yu8zUpVuyd5cHR6l/rmOffmzz6fjIJxNMhYW3u2Zeg/l3klMkrFsdPzCzZ/2O7IySqjPByzyTxi3ydbXL3drF5TU/QF4nB8/Cnucxhj7V9/JyuJx0ZJODqS8ZnPe/NXv95dn9w/5ZZRDI4GGWu3m3Zxr+nmaLl4nkZ2GQXg+IhFOKkWdZ6VHaCMqjoiQ4XhIMOaIyo/eQFHO+fByah6s0KGydGtjIK+gMfkMDNMDstPOAwMm5WeZWS6gBsOMuAgw5qjFxlYVI3DwLBZIQMOMuAgo+ZG4/PLOPg1GQsWiR9Sa3LsJUOV4iADDlf4heMcFX3DiDrBYWDYrJABBxlqBcc2AWTA8Y6Ds9tTMixIdx4YjorWeJxjYcLACOdWZHIIDgkOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsEhOCQ4BIfgEBw6VP8AvlJvR1zeCWYAAAAASUVORK5CYII=">
+<title>선물 통합 손익</title>
+<style>
+:root{
+  --bg:#f4f5f7; --card:#ffffff; --text:#111827; --muted:#6b7280; --line:#e5e7eb;
+  --auto:#eceef2; --auto-text:#4b5563; --accent:#2563eb; --accent-text:#ffffff;
+  --up:#059669; --down:#dc2626;
+  --warn-bg:#fef2f2; --warn-line:#fecaca; --warn-text:#b91c1c;
+  --info-bg:#eff6ff; --info-line:#bfdbfe; --info-text:#1e40af;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 14px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f141b; --card:#171e27; --text:#e5e7eb; --muted:#9ca3af; --line:#283241;
+    --auto:#232c38; --auto-text:#cbd5e1; --accent:#3b82f6;
+    --up:#34d399; --down:#f87171;
+    --warn-bg:#2a1517; --warn-line:#5b2328; --warn-text:#fca5a5;
+    --info-bg:#132036; --info-line:#1e3a5f; --info-text:#93c5fd;
+    --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI",sans-serif;
+  font-size:15px; line-height:1.45;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+body.locked{overflow:hidden}
+button,input,select{font:inherit;color:inherit}
+button{touch-action:manipulation;cursor:pointer}
+.wrap{max-width:980px;margin:0 auto;padding:16px 16px 110px}
+h1{font-size:20px;margin:6px 0 4px}
+h3{margin:0;font-size:17px}
+.muted{color:var(--muted)}
+.tiny{font-size:12px;color:var(--muted);margin:4px 0 0}
+.up{color:var(--up)} .down{color:var(--down)}
+.notice{background:var(--info-bg);border:1px solid var(--info-line);color:var(--info-text);border-radius:10px;padding:9px 12px;font-size:13px;margin:10px 0}
+.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-text);border-radius:10px;padding:9px 12px;font-size:13px;margin:8px 0;font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:9px;padding:7px 12px;font-size:14px}
+.btn.sm{padding:5px 10px;font-size:13px}
+.btn.danger{color:var(--down)}
+.btn.primary,.primary{background:var(--accent);color:var(--accent-text);border:none;border-radius:12px;padding:14px;font-size:16px;font-weight:700;width:100%}
+.primary:disabled{opacity:.4}
+
+/* 상단 합계 */
+.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat .lbl{display:block;font-size:12px;color:var(--muted)}
+.stat b{font-size:15px;font-variant-numeric:tabular-nums}
+.stat.big b{font-size:20px}
+.krw{display:block;font-size:12px;color:var(--muted)}
+.sum-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:12px;font-size:13px}
+.switch{display:inline-flex;align-items:center;gap:6px}
+.switch input{width:18px;height:18px}
+.rate input{width:100px}
+details.help{margin-top:10px;font-size:13px}
+details.help summary{color:var(--accent);cursor:pointer}
+details.help dl{margin:8px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}
+details.help dt{font-weight:700}
+details.help dd{margin:0;color:var(--muted)}
+
+/* 거래소 카드 */
+.ex-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px;align-items:start}
+@media (min-width:820px){.ex-grid{grid-template-columns:1fr 1fr}}
+.ex-head{display:flex;align-items:center;gap:8px}
+.ex-head h3{flex:0 0 auto}
+.ex-head .grow{flex:1;min-width:0;font-size:13px}
+.ex-card.collapsed{padding:10px 14px}
+.ex-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-top:12px}
+.pos{border-top:1px solid var(--line);margin-top:12px;padding-top:12px}
+.pos-head{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.pos-head .grow{flex:1}
+.badge{font-size:12px;border-radius:6px;padding:1px 7px;border:1px solid var(--line);color:var(--muted)}
+.badge.long{color:var(--up);border-color:currentColor}
+.badge.short{color:var(--down);border-color:currentColor}
+.mlc-line{margin:6px 0;font-weight:600;font-variant-numeric:tabular-nums}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:14px}
+@media (min-width:520px){.kv{grid-template-columns:1fr 1fr 1fr}}
+.kv .k{display:block;font-size:12px;color:var(--muted)}
+.kv .v{font-variant-numeric:tabular-nums}
+.manual{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px;flex-wrap:wrap}
+.manual input{width:130px}
+
+/* 입력칸 */
+.num,.txt,select{
+  width:100%;font-size:16px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;
+  background:var(--card);outline:none;-webkit-appearance:none;appearance:none;font-variant-numeric:tabular-nums
+}
+.num:focus,.txt:focus,select:focus{border-color:var(--accent)}
+.num.sm{padding:6px 8px;font-size:16px}
+.num.auto{background:var(--auto);color:var(--auto-text);border-style:dashed}
+.ro{background:var(--auto);color:var(--auto-text);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:10px;font-variant-numeric:tabular-nums}
+.ro b{color:var(--text)}
+.field{display:block;margin-top:14px}
+.field>.lbl,.mlc-cell>.lbl{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
+.hint{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{flex:1;min-width:64px;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:9px 6px;font-size:14px}
+.seg button.on{background:var(--accent);color:var(--accent-text);border-color:var(--accent);font-weight:700}
+.signed{display:flex;gap:6px}
+.signed .sign{flex:0 0 46px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:18px}
+.mlc-box{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:12px}
+.mlc-row{display:grid;grid-template-columns:1fr auto .8fr auto 1fr;gap:6px;align-items:start}
+.mlc-cell{display:block;min-width:0}
+.mlc-cell>.lbl{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.op{padding-top:30px;font-size:18px;color:var(--muted);text-align:center}
+
+/* 미리보기 */
+.preview{margin-top:16px;border:2px solid var(--accent);border-radius:14px;padding:12px 14px}
+.pv-title{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.02em}
+.pv-main{font-weight:700;font-size:16px;margin:4px 0 8px;font-variant-numeric:tabular-nums}
+.pv-row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid var(--line);font-size:14px}
+.pv-row b{text-align:right;font-variant-numeric:tabular-nums}
+.calc{font-size:12px;color:var(--muted);margin:0 0 4px;font-variant-numeric:tabular-nums;text-align:right}
+.guide{margin-top:10px;background:var(--info-bg);color:var(--info-text);border-radius:10px;padding:9px 12px;font-size:13px}
+
+/* 하단 시트 */
+.sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.sheet-bg[hidden]{display:none}
+.sheet{background:var(--bg);width:100%;max-width:640px;max-height:92vh;max-height:92dvh;border-radius:18px 18px 0 0;display:flex;flex-direction:column}
+@media (min-width:700px){.sheet-bg{align-items:center}.sheet{border-radius:18px;max-height:88vh}}
+.sheet-head{display:flex;align-items:center;padding:14px 16px 8px}
+.sheet-head h2{flex:1;margin:0;font-size:18px}
+.x{border:none;background:none;font-size:26px;line-height:1;color:var(--muted);padding:0 4px}
+.sheet-body{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:0 16px 16px}
+.sheet-foot{padding:10px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.menu-item{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:14px;margin-top:10px}
+.menu-item b{display:block;font-size:16px}
+.menu-item span{font-size:13px;color:var(--muted)}
+
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;border:none;background:var(--accent);color:#fff;font-size:34px;line-height:1;box-shadow:0 6px 18px rgba(37,99,235,.4);z-index:40}
+details.adv{margin-top:18px}
+details.adv>summary{cursor:pointer;font-weight:700;padding:6px 0}
+.adv-sec{margin-top:12px}
+.adv-sec h4{margin:0 0 6px;font-size:14px}
+.adv-table{width:100%;border-collapse:collapse;font-size:13px}
+.adv-table td,.adv-table th{padding:5px 4px;text-align:left;vertical-align:middle}
+.adv-table th{font-weight:600;color:var(--muted);font-size:12px}
+.adv-table .num{min-width:80px}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(90px + env(safe-area-inset-bottom));background:#111827;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+ol.steps{margin:4px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap" id="main">
+  <h1>선물 통합 손익</h1>
+  <div id="iosHint"></div>
+  <p class="notice">포지션을 종료했거나 입출금했다면 잔고를 업데이트하세요</p>
+  <section class="card" id="summary"></section>
+  <section class="ex-grid" id="exchanges"></section>
+  <details class="adv card" id="advDetails">
+    <summary>고급 설정</summary>
+    <div id="adv"></div>
+  </details>
+</div>
+
+<button class="fab" id="fab" aria-label="추가">+</button>
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+
+<div class="sheet-bg" id="sheet" hidden>
+  <div class="sheet" role="dialog" aria-modal="true">
+    <div class="sheet-head"><h2 id="sheetTitle"></h2><button class="x" data-close aria-label="닫기">×</button></div>
+    <div class="sheet-body" id="sheetBody"></div>
+    <div class="sheet-foot" id="sheetFoot" hidden></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+// =====================================================================
+// ==== CALC START ==== 계산 함수 (화면과 무관한 순수 계산)
+// =====================================================================
+
+// 숫자 문자열 읽기: 콤마·공백 제거. 빈값/잘못된 값은 NaN
+function parseNum(v){
+  if (v === null || v === undefined) return NaN;
+  const s = String(v).replace(/[,\s]/g, '');
+  if (s === '' || s === '-' || s === '.' || s === '-.') return NaN;
+  const n = Number(s);
+  return Number.isFinite(n) ? n : NaN;
+}
+function isNum(n){ return typeof n === 'number' && Number.isFinite(n); }
+function isPos(n){ return isNum(n) && n > 0; }
+
+// [a 마진] × [b 레버리지] = [c 포지션 규모] 세 칸 중 하나 자동 계산
+//   a, b 입력 → c = a × b
+//   b, c 입력 → a = c ÷ b
+//   a, c 입력 → b = c ÷ a
+//   order: 사용자가 입력한 칸 이름 순서(마지막이 가장 최근). 최근 두 칸이 기준이 됨
+//   0이나 빈 값으로 나누게 되면 NaN(빈칸)
+function solveMarginTriple(vals, order){
+  const recent = order.slice(-2);
+  if (recent.length < 2) return { auto: null, value: NaN };
+  const auto = ['a', 'b', 'c'].find(k => !recent.includes(k));
+  const { a, b, c } = vals;
+  let value = NaN;
+  if (auto === 'c' && isNum(a) && isNum(b)) value = a * b;
+  if (auto === 'a' && isNum(c) && isPos(b)) value = c / b;
+  if (auto === 'b' && isNum(c) && isPos(a)) value = c / a;
+  return { auto, value };
+}
+
+// 수량 = 포지션 규모(c) ÷ 진입가
+function qtyFromNotional(notional, price){
+  return isNum(notional) && isPos(price) ? notional / price : NaN;
+}
+
+// 미실현 손익
+//   롱 = (현재가 − 평균 진입가) × 수량
+//   숏 = (평균 진입가 − 현재가) × 수량
+function unrealizedPnl(side, entry, price, qty){
+  if (!isPos(entry) || !isPos(price) || !isNum(qty)) return NaN;
+  return side === 'long' ? (price - entry) * qty : (entry - price) * qty;
+}
+
+// 증거금 대비 수익률(ROE, %) = 미실현 손익 ÷ 증거금 × 100
+function roePct(pnl, margin){
+  return isNum(pnl) && isPos(margin) ? pnl / margin * 100 : NaN;
+}
+
+// 지갑 잔고 = 총자산 − 미실현 손익
+function walletFromTotal(total, upnl){
+  return isNum(total) && isNum(upnl) ? total - upnl : NaN;
+}
+
+// 순자산 = 지갑 잔고 + 해당 거래소 모든 포지션의 미실현 손익 합
+//   (손익 중 하나라도 모르면 NaN)
+function equityOf(wallet, pnls){
+  if (!isNum(wallet)) return NaN;
+  let sum = wallet;
+  for (const p of pnls){ if (!isNum(p)) return NaN; sum += p; }
+  return sum;
+}
+
+// 가용 금액 = 순자산 − 해당 거래소 모든 포지션의 증거금 합계
+function availableOf(equity, margins){
+  if (!isNum(equity)) return NaN;
+  return equity - margins.reduce((s, m) => s + (isNum(m) ? m : 0), 0);
+}
+
+// 격리 마진 예상 청산가 (근사치)   E 평균 진입가, L 레버리지, m 유지증거금률
+//   롱 = E × (1 − 1/L) ÷ (1 − m)
+//   숏 = E × (1 + 1/L) ÷ (1 + m)
+function liqIsolated(side, E, L, m){
+  if (!isPos(E) || !isPos(L) || !isNum(m)) return NaN;
+  return side === 'long' ? E * (1 - 1 / L) / (1 - m) : E * (1 + 1 / L) / (1 + m);
+}
+
+// 교차 마진 예상 청산가 (해당 거래소 교차 포지션 1개일 때 근사치)   Q 수량, W 지갑 잔고
+//   롱 = (E×Q − W) ÷ (Q × (1 − m))     ← 0 이하이면 "청산 없음(현실적으로)"
+//   숏 = (E×Q + W) ÷ (Q × (1 + m))
+function liqCross(side, E, Q, W, m){
+  if (!isPos(E) || !isPos(Q) || !isNum(W) || !isNum(m)) return NaN;
+  return side === 'long' ? (E * Q - W) / (Q * (1 - m)) : (E * Q + W) / (Q * (1 + m));
+}
+
+// 추가 진입 후 합친 포지션
+//   합친 수량 = 기존 수량 + 추가 수량
+//   평균 진입가 = (기존 진입가×기존 수량 + 추가 진입가×추가 수량) ÷ 합친 수량
+//   합친 포지션 규모 = 평균 진입가 × 합친 수량
+//   전체 증거금 = 합친 포지션 규모 ÷ 레버리지
+function mergePosition(oldEntry, oldQty, addPrice, addQty, lev){
+  if (!isPos(oldEntry) || !isPos(oldQty) || !isPos(addPrice) || !isPos(addQty) || !isPos(lev)) return null;
+  const qty = oldQty + addQty;
+  const avg = (oldEntry * oldQty + addPrice * addQty) / qty;
+  const notional = avg * qty;
+  const margin = notional / lev;
+  return { qty, avg, notional, margin };
+}
+
+// 상황별 예상 청산가
+//   pos: {side, mode, entry, qty, lev}, others: 같은 거래소의 다른 포지션들, wallet: 지갑 잔고, m: 유지증거금률
+//   - 격리: 격리 공식
+//   - 교차인데 같은 거래소에 다른 교차 포지션이 있음: 'multi' (근사치 계산 불가)
+//   - 교차 1개 + 격리 포지션이 섞임: W = 지갑 잔고 − 격리 포지션 증거금 합계 로 교차 공식
+//   반환 status: 'ok'(price 있음) | 'none'(청산 없음) | 'multi' | 'nowallet' | 'na'
+function estimateLiq(pos, others, wallet, m){
+  if (pos.mode === 'isolated'){
+    const p = liqIsolated(pos.side, pos.entry, pos.lev, m);
+    return isNum(p) ? { status: 'ok', price: p } : { status: 'na' };
+  }
+  if (others.some(o => o.mode === 'cross')) return { status: 'multi' };
+  if (!isNum(wallet)) return { status: 'nowallet' };
+  const W = wallet - others.filter(o => o.mode === 'isolated').reduce((s, o) => s + o.margin, 0);
+  const p = liqCross(pos.side, pos.entry, pos.qty, W, m);
+  if (!isNum(p)) return { status: 'na' };
+  if (p <= 0) return { status: 'none' };
+  return { status: 'ok', price: p };
+}
+
+// 청산까지 거리(%) = |기준가 − 청산가| ÷ 기준가 × 100
+function distancePct(ref, liq){
+  return isPos(ref) && isNum(liq) ? Math.abs(ref - liq) / ref * 100 : NaN;
+}
+// ==== CALC END ====
+
+// =====================================================================
+// 기본 설정
+// =====================================================================
+const EX = [
+  { id: 'bitget',  name: 'Bitget' },
+  { id: 'binance', name: 'Binance' },
+  { id: 'bybit',   name: 'Bybit' },
+  { id: 'okx',     name: 'OKX' },
+];
+const EX_IDS = EX.map(e => e.id);
+const exName = id => (EX.find(e => e.id === id) || {}).name || id;
+
+// 거래소별 현재가 API (공개 시세, 키 불필요). 종목 이름 형식은 거래소마다 다름
+const PRICE_API = {
+  binance: { url: s => `https://fapi.binance.com/fapi/v1/ticker/price?symbol=${s}`, parse: j => j.price },
+  bybit:   { url: s => `https://api.bybit.com/v5/market/tickers?category=linear&symbol=${s}`, parse: j => j.result.list[0].lastPrice },
+  okx:     { url: s => `https://www.okx.com/api/v5/market/ticker?instId=${baseOf(s)}-USDT-SWAP`, parse: j => j.data[0].last },
+  bitget:  { url: s => `https://api.bitget.com/api/v2/mix/market/ticker?symbol=${s}&productType=USDT-FUTURES`, parse: j => j.data[0].lastPr },
+};
+
+// 종목 이름 정리: 대문자, 기호 제거, USDT 붙이기 (btc → BTCUSDT, BTC-USDT → BTCUSDT)
+function normSymbol(s){
+  let v = String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (v.endsWith('USDTSWAP')) v = v.slice(0, -4);
+  if (v && !v.endsWith('USDT')) v += 'USDT';
+  return v;
+}
+function baseOf(sym){ return sym.replace(/USDT$/, '') || sym; }
+function validSymbol(sym){ return /^[A-Z0-9]{1,20}USDT$/.test(sym); }
+
+const IS_IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const IS_STANDALONE = window.navigator.standalone === true || (window.matchMedia && matchMedia('(display-mode: standalone)').matches);
+
+// =====================================================================
+// 저장 (localStorage)
+// =====================================================================
+const STORE_KEY = 'futuresPnl.v1';
+let data = load();
+
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+
+function sanitize(d){
+  d = d || {};
+  const out = { version: 1, exchanges: {}, positions: [], settings: { krwOn: false, krwRate: null, hideIosHint: false } };
+  for (const e of EX){
+    const s = (d.exchanges || {})[e.id] || {};
+    const manual = {};
+    if (s.manualPrices && typeof s.manualPrices === 'object'){
+      for (const [k, v] of Object.entries(s.manualPrices)) if (isPos(v)) manual[k] = v;
+    }
+    out.exchanges[e.id] = {
+      wallet: isNum(s.wallet) ? s.wallet : null,
+      mmr: isNum(s.mmr) && s.mmr >= 0 && s.mmr < 0.5 ? s.mmr : 0.005,
+      manualPrices: manual,
+    };
+  }
+  if (Array.isArray(d.positions)){
+    out.positions = d.positions
+      .filter(p => p && EX_IDS.includes(p.ex) && typeof p.symbol === 'string' && isPos(p.entry) && isPos(p.qty) && isPos(p.lev) && isPos(p.margin))
+      .map(p => ({
+        id: String(p.id || uid()), ex: p.ex, symbol: normSymbol(p.symbol),
+        side: p.side === 'short' ? 'short' : 'long', mode: p.mode === 'isolated' ? 'isolated' : 'cross',
+        entry: p.entry, qty: p.qty, lev: p.lev, margin: p.margin,
+        notional: isPos(p.notional) ? p.notional : p.entry * p.qty,
+        updatedAt: p.updatedAt || Date.now(),
+      }));
+  }
+  if (d.settings){
+    out.settings.krwOn = !!d.settings.krwOn;
+    out.settings.krwRate = isPos(d.settings.krwRate) ? d.settings.krwRate : null;
+    out.settings.hideIosHint = !!d.settings.hideIosHint;
+  }
+  return out;
+}
+function load(){
+  try { const raw = localStorage.getItem(STORE_KEY); if (raw) return sanitize(JSON.parse(raw)); } catch (e) {}
+  return sanitize({});
+}
+function save(){
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(data)); }
+  catch (e) { alert('저장에 실패했어요. 브라우저의 저장 공간 설정을 확인해 주세요.'); }
+}
+const positionsOf = ex => data.positions.filter(p => p.ex === ex);
+const findPos = (ex, sym) => data.positions.find(p => p.ex === ex && p.symbol === sym);
+
+// =====================================================================
+// 현재가
+// =====================================================================
+const live = {};               // 'ex|SYM' → {status:'ok'|'fail'|'loading', price, ts}
+let lastRefresh = null;
+const pkey = (ex, sym) => ex + '|' + sym;
+
+function priceOf(ex, sym){
+  const l = live[pkey(ex, sym)];
+  if (l && l.status === 'ok') return l.price;
+  const m = data.exchanges[ex].manualPrices[sym];
+  return isPos(m) ? m : NaN;
+}
+function priceStatus(ex, sym){ return (live[pkey(ex, sym)] || {}).status || 'idle'; }
+
+async function fetchPrice(ex, sym){
+  if (!validSymbol(sym)) return;
+  const k = pkey(ex, sym);
+  const prev = live[k];
+  if (!prev) live[k] = { status: 'loading' };
+  let timer;
+  try {
+    const ctrl = new AbortController();
+    timer = setTimeout(() => ctrl.abort(), 8000);
+    const res = await fetch(PRICE_API[ex].url(sym), { signal: ctrl.signal, cache: 'no-store' });
+    if (!res.ok) throw new Error('http');
+    const p = parseNum(PRICE_API[ex].parse(await res.json()));
+    if (!isPos(p)) throw new Error('parse');
+    live[k] = { status: 'ok', price: p, ts: Date.now() };
+  } catch (e) {
+    // 잠깐 끊긴 경우엔 2분 안의 마지막 가격을 유지
+    if (prev && prev.status === 'ok' && Date.now() - prev.ts < 120000) return;
+    live[k] = { status: 'fail', ts: Date.now() };
+  } finally { clearTimeout(timer); }
+}
+
+async function refreshAll(){
+  const pairs = new Map();
+  for (const p of data.positions) pairs.set(pkey(p.ex, p.symbol), [p.ex, p.symbol]);
+  if (F && F.ex && F.symbol) pairs.set(pkey(F.ex, F.symbol), [F.ex, F.symbol]);
+  await Promise.all([...pairs.values()].map(([ex, s]) => fetchPrice(ex, s)));
+  lastRefresh = new Date();
+  renderMain();
+  if (F){ prefillPrice(); updateForm(); }
+}
+
+// =====================================================================
+// 표시 형식
+// =====================================================================
+const nf2 = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const nf4 = new Intl.NumberFormat('en-US', { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+const z = n => (Math.abs(n) < 0.005 ? 0 : n);
+function money(n){ return isNum(n) ? nf2.format(z(n)) : '—'; }
+function signed(n){ return isNum(n) ? (z(n) > 0 ? '+' : '') + nf2.format(z(n)) : '—'; }
+function qtyFmt(n){ return isNum(n) ? nf4.format(n) : '—'; }
+function levFmt(n){ return isNum(n) ? String(Math.round(n * 100) / 100) : '—'; }
+function pctFmt(n, withSign){ return isNum(n) ? (withSign && z(n) > 0 ? '+' : '') + nf2.format(z(n)) + '%' : '—'; }
+function tone(n){ return !isNum(n) || Math.abs(n) < 0.005 ? '' : (n > 0 ? 'up' : 'down'); }
+function plain(n, d = 2){ return isNum(n) ? String(Math.round(n * 10 ** d) / 10 ** d) : ''; }
+function esc(s){ return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+function krw(n){
+  const r = data.settings.krwRate;
+  if (!data.settings.krwOn || !isPos(r) || !isNum(n)) return '';
+  return '≈ ₩' + Math.round(n * r).toLocaleString('en-US');
+}
+// "850.00 × 10배 = 8,500.00 USDT (0.1000 BTC)"
+function mlcText(a, b, c, q, sym){
+  return `${money(a)} × ${levFmt(b)}배 = ${money(c)} USDT (${qtyFmt(q)} ${esc(baseOf(sym))})`;
+}
+const LIQ_NOTE = '수수료·펀딩비 미반영 근사치, 정확한 값은 거래소 화면 확인';
+function liqText(liq){
+  switch (liq.status){
+    case 'ok': return money(liq.price);
+    case 'none': return '청산 없음(현실적으로)';
+    case 'multi': return '근사치 계산 불가, 거래소 화면 확인';
+    case 'nowallet': return '지갑 잔고를 입력하면 계산돼요';
+    default: return '—';
+  }
+}
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('show'), 1800);
+}
+const $ = s => document.querySelector(s);
+
+// =====================================================================
+// 대시보드
+// =====================================================================
+// 거래소 하나의 계산 결과 모음
+function exchangeView(exId){
+  const ex = data.exchanges[exId];
+  const list = positionsOf(exId);
+  const wallet = isNum(ex.wallet) ? ex.wallet : NaN;
+  const rows = list.map(p => {
+    const price = priceOf(exId, p.symbol);
+    const pnl = unrealizedPnl(p.side, p.entry, price, p.qty);
+    const liq = estimateLiq(p, list.filter(o => o.id !== p.id), wallet, ex.mmr);
+    return { p, price, pnl, roe: roePct(pnl, p.margin), liq, dist: liq.status === 'ok' ? distancePct(price, liq.price) : NaN };
+  });
+  const pnls = rows.map(r => r.pnl);
+  const upnl = pnls.every(isNum) ? pnls.reduce((s, v) => s + v, 0) : NaN;
+  const marginSum = list.reduce((s, p) => s + p.margin, 0);
+  const equity = equityOf(wallet, pnls);
+  return { exId, wallet, rows, upnl, marginSum, equity, available: availableOf(equity, list.map(p => p.margin)) };
+}
+
+let pendingRender = false;
+function renderMain(){
+  const ae = document.activeElement;
+  if (ae && (ae.tagName === 'INPUT' || ae.tagName === 'SELECT') && $('#main').contains(ae)){ pendingRender = true; return; }
+  pendingRender = false;
+  const views = EX.map(e => exchangeView(e.id));
+  $('#summary').innerHTML = summaryHTML(views);
+  $('#exchanges').innerHTML = views.map(exCardHTML).join('');
+  $('#adv').innerHTML = advHTML();
+  $('#iosHint').innerHTML = (IS_IOS && !IS_STANDALONE && !data.settings.hideIosHint)
+    ? `<div class="notice">📱 아이폰 앱처럼 쓰려면: 아래쪽 <b>공유 버튼(□↑)</b> → <b>홈 화면에 추가</b>를 누르세요. <button class="btn sm" data-act="hide-ios">닫기</button></div>`
+    : '';
+}
+
+function summaryHTML(views){
+  const withWallet = views.filter(v => isNum(v.wallet));
+  const okEq = withWallet.filter(v => isNum(v.equity));
+  const totalEq = okEq.length ? okEq.reduce((s, v) => s + v.equity, 0) : NaN;
+  const okPnl = views.filter(v => v.rows.length && isNum(v.upnl));
+  const totalPnl = okPnl.length ? okPnl.reduce((s, v) => s + v.upnl, 0) : (views.some(v => v.rows.length) ? NaN : 0);
+  const missing = views.some(v => v.rows.length && !isNum(v.upnl));
+  const s = data.settings;
+  const time = lastRefresh ? lastRefresh.toLocaleTimeString('en-GB', { hour12: false }) : '불러오는 중';
+  return `
+  <div class="sum-grid">
+    <div class="stat big"><span class="lbl">4개 거래소 합산 순자산</span><b>${money(totalEq)} USDT</b><span class="krw">${krw(totalEq)}</span></div>
+    <div class="stat big"><span class="lbl">합산 미실현 손익</span><b class="${tone(totalPnl)}">${signed(totalPnl)} USDT</b><span class="krw">${krw(totalPnl)}</span></div>
+  </div>
+  ${missing ? '<p class="tiny">현재가를 모르는 포지션이 있어 일부 거래소가 합계에서 빠졌어요. 해당 카드에서 현재가를 입력하세요.</p>' : ''}
+  <div class="sum-foot">
+    <label class="switch"><input type="checkbox" id="krwOn" ${s.krwOn ? 'checked' : ''}><span>원화 환산</span></label>
+    ${s.krwOn ? `<label class="rate">1 USDT = <input id="krwRate" class="num sm" inputmode="decimal" autocomplete="off" placeholder="환율" value="${plain(s.krwRate)}"> 원</label>` : ''}
+    <span class="muted" style="font-size:12px">현재가 30초마다 자동 갱신 · ${time}</span>
+  </div>
+  <details class="help"><summary>숫자 뜻 보기</summary>
+    <dl>
+      <dt>지갑 잔고</dt><dd>입금액 + 이미 확정된 손익. 아직 안 끝난 포지션의 손익(미실현)은 빠진 금액이에요.</dd>
+      <dt>미실현 손익</dt><dd>지금 포지션을 닫으면 생길 손익. 현재가에 따라 계속 바뀌어요.</dd>
+      <dt>순자산</dt><dd>지갑 잔고 + 미실현 손익. 거래소 자산 화면의 '총자산'과 같은 개념이에요.</dd>
+      <dt>증거금</dt><dd>포지션에 묶여 있는 내 돈 (입력한 마진 a).</dd>
+      <dt>가용 금액</dt><dd>순자산 − 증거금 합계. 새 주문에 더 쓸 수 있는 돈이에요. 거래소의 '사용 가능' 금액과는 수수료·안전 버퍼 때문에 조금 다를 수 있어요.</dd>
+      <dt>예상 청산가</dt><dd>${LIQ_NOTE}.</dd>
+    </dl>
+  </details>`;
+}
+
+function exCardHTML(v){
+  const name = exName(v.exId);
+  const balBtn = `<button class="btn sm" data-act="balance" data-ex="${v.exId}">잔고 업데이트</button>`;
+  if (!v.rows.length){
+    return `<article class="card ex-card collapsed"><div class="ex-head"><h3>${name}</h3>
+      <span class="grow muted">포지션 없음 · ${isNum(v.wallet) ? `지갑 잔고 ${money(v.wallet)} USDT` : '잔고 미입력'}</span>${balBtn}</div></article>`;
+  }
+  return `<article class="card ex-card">
+    <div class="ex-head"><h3>${name}</h3><span class="grow"></span>${balBtn}</div>
+    <div class="ex-stats">
+      <div class="stat"><span class="lbl">지갑 잔고</span><b>${isNum(v.wallet) ? money(v.wallet) : '미입력'}</b></div>
+      <div class="stat"><span class="lbl">순자산</span><b>${money(v.equity)}</b><span class="krw">${krw(v.equity)}</span></div>
+      <div class="stat"><span class="lbl">미실현 손익</span><b class="${tone(v.upnl)}">${signed(v.upnl)}</b></div>
+      <div class="stat"><span class="lbl">가용 금액</span><b class="${isNum(v.available) && v.available < 0 ? 'down' : ''}">${money(v.available)}</b></div>
+    </div>
+    <p class="tiny">가용 금액 = 순자산 − 증거금 합계(${money(v.marginSum)}). 거래소 화면과는 수수료·안전 버퍼 등으로 조금 다를 수 있어요.</p>
+    ${v.rows.map(r => posHTML(r, v.exId)).join('')}
+  </article>`;
+}
+
+function posHTML(r, exId){
+  const p = r.p;
+  const st = priceStatus(exId, p.symbol);
+  let priceCell = money(r.price);
+  if (!isNum(r.price) && st === 'loading') priceCell = '불러오는 중…';
+  const manual = st === 'fail'
+    ? `<label class="manual"><span>현재가를 불러오지 못했어요 · <b>현재가 수동 입력</b></span>
+        <input class="num sm" inputmode="decimal" autocomplete="off" data-manual="${exId}|${esc(p.symbol)}" value="${plain(data.exchanges[exId].manualPrices[p.symbol], 8)}" placeholder="현재가"></label>`
+    : '';
+  return `<div class="pos">
+    <div class="pos-head">
+      <b>${esc(p.symbol)}</b>
+      <span class="badge ${p.side}">${p.side === 'long' ? '롱' : '숏'}</span>
+      <span class="badge">${p.mode === 'cross' ? '교차' : '격리'}</span>
+      <span class="grow"></span>
+      <button class="btn sm danger" data-act="close" data-id="${esc(p.id)}">포지션 종료</button>
+    </div>
+    <div class="mlc-line">${mlcText(p.margin, p.lev, p.notional, p.qty, p.symbol)}</div>
+    <div class="kv">
+      <div><span class="k">평균 진입가</span><span class="v">${money(p.entry)}</span></div>
+      <div><span class="k">현재가</span><span class="v">${priceCell}</span></div>
+      <div><span class="k">미실현 손익</span><span class="v ${tone(r.pnl)}">${signed(r.pnl)}</span></div>
+      <div><span class="k">ROE</span><span class="v ${tone(r.roe)}">${pctFmt(r.roe, true)}</span></div>
+      <div><span class="k">예상 청산가</span><span class="v">${liqText(r.liq)}</span></div>
+      <div><span class="k">청산까지 거리</span><span class="v">${pctFmt(r.dist)}</span></div>
+    </div>
+    <p class="tiny">청산가: ${LIQ_NOTE}</p>
+    ${manual}
+  </div>`;
+}
+
+function advHTML(){
+  const rows = EX.map(e => {
+    const x = data.exchanges[e.id];
+    return `<tr><td><b>${e.name}</b></td>
+      <td><input class="num sm" inputmode="decimal" autocomplete="off" data-adv="wallet" data-ex="${e.id}" value="${plain(x.wallet)}" placeholder="미입력"></td>
+      <td><input class="num sm" inputmode="decimal" autocomplete="off" data-adv="mmr" data-ex="${e.id}" value="${plain(x.mmr * 100, 4)}"></td></tr>`;
+  }).join('');
+  return `
+  <div class="adv-sec"><h4>거래소별 설정</h4>
+    <table class="adv-table"><tr><th></th><th>지갑 잔고 직접 입력 (USDT)</th><th>유지증거금률 (%)</th></tr>${rows}</table>
+    <p class="tiny">거래소에서 지갑 잔고(Wallet Balance)를 직접 볼 수 있다면 여기에 바로 입력해도 돼요. 유지증거금률은 청산가 계산에만 쓰여요 (기본 0.5%).</p>
+  </div>
+  <div class="adv-sec"><h4>데이터 백업</h4>
+    <div class="btn-row"><button class="btn" data-act="export">백업 내보내기</button><button class="btn" data-act="import">백업 불러오기</button></div>
+    <p class="tiny">기록은 이 기기의 브라우저 안에만 저장돼요. 기기를 바꾸거나 사파리 데이터를 지우면 사라질 수 있으니 가끔 백업해 두세요.${IS_IOS ? ' 아이폰에서는 내보내기 후 \'파일에 저장\'을 고르면 돼요.' : ''}</p>
+  </div>
+  <div class="adv-sec"><h4>아이폰에서 앱처럼 쓰기</h4>
+    <ol class="steps"><li>사파리로 이 페이지를 열어요</li><li>아래쪽 공유 버튼(□↑)을 눌러요</li><li>'홈 화면에 추가'를 누르면 홈 화면에 아이콘이 생겨요</li></ol>
+  </div>`;
+}
+
+// 대시보드 이벤트
+$('#main').addEventListener('click', e => {
+  const b = e.target.closest('[data-act]');
+  if (!b) return;
+  const act = b.dataset.act;
+  if (act === 'balance') openBalance(b.dataset.ex);
+  if (act === 'close') closePosition(b.dataset.id);
+  if (act === 'export') exportBackup();
+  if (act === 'import') $('#importFile').click();
+  if (act === 'hide-ios'){ data.settings.hideIosHint = true; save(); renderMain(); }
+});
+$('#main').addEventListener('change', e => {
+  const t = e.target;
+  if (t.id === 'krwOn'){ data.settings.krwOn = t.checked; save(); t.blur(); renderMain(); return; }
+  if (t.id === 'krwRate'){ const v = parseNum(t.value); data.settings.krwRate = isPos(v) ? v : null; save(); }
+  if (t.dataset.manual){
+    const [ex, sym] = t.dataset.manual.split('|');
+    const v = parseNum(t.value);
+    if (isPos(v)) data.exchanges[ex].manualPrices[sym] = v; else delete data.exchanges[ex].manualPrices[sym];
+    save();
+  }
+  if (t.dataset.adv){
+    const x = data.exchanges[t.dataset.ex];
+    const v = parseNum(t.value);
+    if (t.dataset.adv === 'wallet') x.wallet = isNum(v) ? v : null;
+    if (t.dataset.adv === 'mmr' && isNum(v) && v >= 0 && v < 50) x.mmr = v / 100;
+    save();
+  }
+  pendingRender = true;
+});
+$('#main').addEventListener('focusout', () => setTimeout(() => { if (pendingRender) renderMain(); }, 0));
+$('#importFile').addEventListener('change', e => { const f = e.target.files[0]; if (f) importBackup(f); e.target.value = ''; });
+
+function closePosition(id){
+  const p = data.positions.find(x => x.id === id);
+  if (!p) return;
+  if (!confirm(`${exName(p.ex)} ${p.symbol} ${p.side === 'long' ? '롱' : '숏'} 포지션을 종료(삭제)할까요?`)) return;
+  data.positions = data.positions.filter(x => x.id !== id);
+  save(); renderMain();
+  openBalance(p.ex, '포지션을 종료했어요. 거래소 화면을 보고 잔고를 업데이트해 주세요.');
+}
+
+// =====================================================================
+// 백업
+// =====================================================================
+function exportBackup(){
+  const payload = { app: 'futures-pnl', version: 1, exportedAt: new Date().toISOString(), data };
+  const json = JSON.stringify(payload, null, 2);
+  const d = new Date(), pad = n => String(n).padStart(2, '0');
+  const name = `futures-backup-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.json`;
+  const blob = new Blob([json], { type: 'application/json' });
+  try {
+    const file = new File([blob], name, { type: 'application/json' });
+    if (IS_IOS && navigator.canShare && navigator.canShare({ files: [file] })){
+      navigator.share({ files: [file], title: '선물 손익 백업' }).catch(() => {});
+      return;
+    }
+  } catch (e) {}
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+function importBackup(file){
+  const r = new FileReader();
+  r.onload = () => {
+    let d;
+    try { const j = JSON.parse(r.result); d = j && j.data ? j.data : j; if (!d || !Array.isArray(d.positions) || !d.exchanges) throw 0; }
+    catch (e) { alert('백업 파일을 읽을 수 없어요. 이 앱에서 내보낸 JSON 파일인지 확인해 주세요.'); return; }
+    if (!confirm(`백업 파일(포지션 ${d.positions.length}개)로 지금 데이터를 바꿀까요?`)) return;
+    data = sanitize(d); save(); renderMain(); refreshAll(); toast('백업을 불러왔어요');
+  };
+  r.readAsText(file);
+}
+
+// =====================================================================
+// 시트(팝업) 공통
+// =====================================================================
+let F = null;          // 지금 열려 있는 입력 화면의 상태
+let lastEx = 'bitget';
+function openSheet(title, body, foot){
+  $('#sheetTitle').textContent = title;
+  $('#sheetBody').innerHTML = body;
+  $('#sheetFoot').innerHTML = foot || '';
+  $('#sheetFoot').hidden = !foot;
+  $('#sheet').hidden = false;
+  document.body.classList.add('locked');
+  $('#sheetBody').scrollTop = 0;
+}
+function closeSheet(){
+  $('#sheet').hidden = true;
+  document.body.classList.remove('locked');
+  F = null;
+  renderMain();
+}
+$('#sheet').addEventListener('click', e => {
+  if (e.target === $('#sheet') || e.target.closest('[data-close]')) closeSheet();
+});
+$('#fab').addEventListener('click', openMenu);
+
+function openMenu(){
+  F = null;
+  openSheet('무엇을 할까요?', `
+    <button class="menu-item" data-menu="record"><b>① 기존 포지션 기록</b><span>이미 거래소에 잡혀 있는 포지션을 앱에 옮겨 적기</span></button>
+    <button class="menu-item" data-menu="new"><b>② 신규 진입</b><span>포지션이 없는 거래소/종목에 새로 들어가기 (미리 계산 + 저장)</span></button>
+    <button class="menu-item" data-menu="add"><b>③ 추가 진입</b><span>이미 있는 포지션에 더 넣기 (미리 계산 + 저장)</span></button>`);
+}
+
+// 입력 조각들
+const segHTML = (name, opts, val) =>
+  `<div class="seg" data-seg="${name}">${opts.map(([v, l]) => `<button type="button" data-v="${v}" class="${v === val ? 'on' : ''}">${l}</button>`).join('')}</div>`;
+const numIn = (id, ph, val = '') =>
+  `<input id="${id}" class="num" type="text" inputmode="decimal" autocomplete="off" placeholder="${ph}" value="${esc(val)}">`;
+const fieldDiv = (label, inner, hint = '') =>
+  `<div class="field"><span class="lbl">${label}</span>${inner}${hint ? `<span class="hint">${hint}</span>` : ''}</div>`;
+const fieldLbl = (label, inner, hint = '', hintId = '') =>
+  `<label class="field"><span class="lbl">${label}</span>${inner}<span class="hint" ${hintId ? `id="${hintId}"` : ''}>${hint}</span></label>`;
+const signedIn = (id, ph) =>
+  `<div class="signed"><button type="button" class="sign" data-sign="${id}" aria-label="부호 바꾸기">±</button>${numIn(id, ph)}</div>`;
+
+function commonPairHTML(withMode){
+  return fieldDiv('거래소', segHTML('ex', EX.map(e => [e.id, e.name]), F.ex))
+    + (withMode ? fieldDiv('마진 모드', segHTML('mode', [['cross', '교차 (Cross)'], ['isolated', '격리 (Isolated)']], F.mode)) : '')
+    + fieldLbl('종목', `<input id="f-symbol" class="txt" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" value="${esc(F.symbol)}">`, 'USDT 무기한 선물 (예: BTCUSDT, ETHUSDT)')
+    + fieldDiv('방향', segHTML('side', [['long', '롱'], ['short', '숏']], F.side))
+    + '<div id="f-pairnote"></div>';
+}
+
+// [a] × [b] = [c] 공통 입력
+function mlcHTML(aLabel, cLabel){
+  return `<div class="mlc-box">
+    <div class="mlc-row">
+      <label class="mlc-cell"><span class="lbl">a ${aLabel}</span>${numIn('f-a', 'USDT')}<span class="hint">내 돈에서 실제로 들어가는 금액</span></label>
+      <span class="op">×</span>
+      <label class="mlc-cell"><span class="lbl">b 레버리지</span>${numIn('f-b', '배')}<span class="hint">레버리지 배수</span></label>
+      <span class="op">=</span>
+      <label class="mlc-cell"><span class="lbl">c ${cLabel}</span>${numIn('f-c', 'USDT')}<span class="hint">레버리지가 적용된 전체 포지션 금액 (거래소 주문 금액)</span></label>
+    </div>
+    <div class="ro">수량 = c ÷ 진입가 = <b id="f-qty">—</b> <span id="f-base"></span></div>
+  </div>`;
+}
+// 세 칸 자동 계산 적용: 회색 표시 + 값 채우기. 계산용 정확한 값은 F.mlc에 보관
+function applyMLC(){
+  const vals = { a: parseNum($('#f-a').value), b: parseNum($('#f-b').value), c: parseNum($('#f-c').value) };
+  const r = solveMarginTriple(vals, F.order);
+  for (const k of ['a', 'b', 'c']) $('#f-' + k).classList.toggle('auto', k === r.auto);
+  if (r.auto){
+    $('#f-' + r.auto).value = isNum(r.value) ? plain(r.value, 4) : '';
+    vals[r.auto] = r.value;
+  }
+  F.mlc = vals;
+  return vals;
+}
+
+function newF(kind, preset){
+  return {
+    kind, ex: preset.ex || lastEx, mode: preset.mode || 'cross', side: preset.side || 'long',
+    symbol: preset.symbol || 'BTCUSDT', order: [], mlc: {}, priceTouched: false, balTouched: false, posId: preset.posId || null,
+  };
+}
+
+// 시트 안 입력 이벤트 (모든 화면 공통)
+$('#sheetBody').addEventListener('click', e => {
+  const menu = e.target.closest('[data-menu]');
+  if (menu){ openForm(menu.dataset.menu, F ? { ex: F.ex, symbol: F.symbol, side: F.side, mode: F.mode } : {}); return; }
+  const sw = e.target.closest('[data-switch]');
+  if (sw){ openForm(sw.dataset.switch, { ex: F.ex, symbol: F.symbol, side: F.side, mode: F.mode, posId: sw.dataset.pos }); return; }
+  const sg = e.target.closest('.seg button');
+  if (sg && F){
+    const name = sg.parentElement.dataset.seg;
+    F[name] = sg.dataset.v;
+    sg.parentElement.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === sg));
+    if (name === 'ex'){ lastEx = F.ex; onPairChange(true); } else updateForm();
+    return;
+  }
+  const sign = e.target.closest('[data-sign]');
+  if (sign){
+    const inp = document.getElementById(sign.dataset.sign);
+    const v = inp.value.trim();
+    inp.value = v.startsWith('-') ? v.slice(1) : '-' + v;
+    updateForm();
+  }
+});
+let symTimer;
+$('#sheetBody').addEventListener('input', e => {
+  if (!F) return;
+  const id = e.target.id;
+  if (id === 'f-a' || id === 'f-b' || id === 'f-c'){
+    const k = id.slice(2);
+    F.order = F.order.filter(x => x !== k).concat(k);
+  }
+  if (id === 'f-entry') F.priceTouched = true;
+  if (id === 'f-bal') F.balTouched = true;
+  if (id === 'f-symbol'){
+    F.symbol = normSymbol(e.target.value);
+    clearTimeout(symTimer);
+    symTimer = setTimeout(() => onPairChange(false), 500);
+  }
+  updateForm();
+});
+$('#sheetBody').addEventListener('change', e => {
+  if (e.target.id === 'f-pos' && F){
+    const p = data.positions.find(x => x.id === e.target.value);
+    if (!p) return;
+    Object.assign(F, { posId: p.id, ex: p.ex, symbol: p.symbol, side: p.side, mode: p.mode, priceTouched: false, order: ['b'] });
+    $('#f-a').value = ''; $('#f-c').value = ''; $('#f-b').value = plain(p.lev);
+    $('#f-entry').value = '';
+    onPairChange(false);
+  }
+});
+$('#sheetFoot').addEventListener('click', e => { if (e.target.id === 'f-save') saveForm(); });
+
+// 거래소/종목이 바뀌면 현재가 다시 불러오고 화면 갱신
+function onPairChange(exChanged){
+  if (!F) return;
+  if (F.kind === 'new' && exChanged && !F.balTouched){
+    const w = data.exchanges[F.ex].wallet;
+    const el = $('#f-bal'); if (el) el.value = plain(w);
+  }
+  prefillPrice(); updateForm();
+  const ex = F.ex, sym = F.symbol;
+  fetchPrice(ex, sym).then(() => { if (F && F.ex === ex && F.symbol === sym){ prefillPrice(); updateForm(); } });
+}
+// 진입(예정)가에 현재가 자동 입력 (사용자가 직접 고치기 전까지)
+function prefillPrice(){
+  if (!F || (F.kind !== 'new' && F.kind !== 'add') || F.priceTouched) return;
+  const el = $('#f-entry'); if (!el) return;
+  const p = priceOf(F.ex, F.symbol);
+  el.value = isPos(p) ? String(p) : '';
+}
+
+// =====================================================================
+// 입력 화면 열기
+// =====================================================================
+function openForm(kind, preset = {}){
+  F = newF(kind, preset);
+  const saveBtn = '<button class="primary" id="f-save">포지션으로 저장</button>';
+  if (kind === 'record'){
+    openSheet('① 기존 포지션 기록',
+      commonPairHTML(true)
+      + fieldLbl('진입가 (USDT)', numIn('f-entry', '거래소에 표시된 평균 진입가'))
+      + mlcHTML('진입 마진', '포지션 규모')
+      + fieldLbl('총자산 (USDT)', numIn('f-total', '0.00'), '자산 화면에 크게 보이는 총액을 그대로 입력하세요')
+      + fieldLbl('미실현 손익 (USDT)', signedIn('f-upnl', '0.00'), '', 'f-upnl-hint')
+      + '<div class="ro">지갑 잔고 = 총자산 − 미실현 손익 = <b id="f-wallet">—</b> USDT</div>'
+      + '<div id="f-err"></div>', saveBtn);
+  }
+  if (kind === 'new'){
+    openSheet('② 신규 진입',
+      commonPairHTML(true)
+      + `<div id="f-balwrap">${fieldLbl('현재 잔고 (USDT)', numIn('f-bal', '0.00', plain(data.exchanges[F.ex].wallet)), '자산 화면에 보이는 총액을 그대로 입력하세요')}</div>`
+      + '<div id="f-balinfo"></div>'
+      + fieldLbl('진입 예정가 (USDT)', numIn('f-entry', '현재가'), '현재가가 자동으로 들어가요. 바꿔도 돼요')
+      + mlcHTML('진입 마진', '포지션 규모')
+      + '<div class="preview" id="f-preview"></div><div id="f-err"></div>', saveBtn);
+  }
+  if (kind === 'add'){
+    if (!data.positions.length){
+      openSheet('③ 추가 진입', `<div class="warn">포지션이 없습니다. 신규 진입으로 전환할까요?</div>
+        <button class="primary" data-switch="new">신규 진입으로 전환</button>`);
+      return;
+    }
+    const p = data.positions.find(x => x.id === F.posId) || findPos(F.ex, F.symbol) || data.positions[0];
+    Object.assign(F, { posId: p.id, ex: p.ex, symbol: p.symbol, side: p.side, mode: p.mode, order: ['b'] });
+    const opts = data.positions.map(x => `<option value="${esc(x.id)}" ${x.id === p.id ? 'selected' : ''}>${exName(x.ex)} · ${esc(x.symbol)} · ${x.side === 'long' ? '롱' : '숏'} · ${x.mode === 'cross' ? '교차' : '격리'}</option>`).join('');
+    openSheet('③ 추가 진입',
+      fieldLbl('거래소 · 종목 (포지션이 있는 것만)', `<select id="f-pos">${opts}</select>`)
+      + '<div class="ro" id="f-cur"></div>'
+      + fieldLbl('추가 진입가 (USDT)', numIn('f-entry', '현재가'), '현재가가 자동으로 들어가요. 바꿔도 돼요')
+      + mlcHTML('추가 진입 마진', '추가 포지션 규모')
+      + '<div class="preview" id="f-preview"></div><div id="f-err"></div>', saveBtn);
+    $('#f-b').value = plain(p.lev);
+  }
+  onPairChange(false);
+}
+
+function openBalance(exId, message){
+  F = { kind: 'balance', ex: exId };
+  const hasPos = positionsOf(exId).length > 0;
+  openSheet(`${exName(exId)} 잔고 업데이트`,
+    (message ? `<div class="notice">${esc(message)}</div>` : '')
+    + fieldLbl('총자산 (USDT)', numIn('f-total', '0.00'), '자산 화면에 크게 보이는 총액을 그대로 입력하세요')
+    + fieldLbl('미실현 손익 (USDT)', signedIn('f-upnl', '0.00'),
+      hasPos ? '포지션 화면의 손익(PnL)을 같은 순간에 보고 입력하세요. 이 거래소 모든 포지션 손익의 합계, 손실이면 마이너스(-)' : '이 거래소에 포지션이 없으면 0이에요')
+    + '<div class="ro">지갑 잔고 = 총자산 − 미실현 손익 = <b id="f-wallet">—</b> USDT</div>'
+    + `<p class="tiny">지금 저장된 지갑 잔고: ${isNum(data.exchanges[exId].wallet) ? money(data.exchanges[exId].wallet) + ' USDT' : '없음'}${hasPos ? ` · 참고: 앱이 계산한 현재 미실현 손익 ${signed(exchangeView(exId).upnl)} USDT` : ''}</p>`
+    + '<div id="f-err"></div>',
+    '<button class="primary" id="f-save">잔고 저장</button>');
+  if (!hasPos) $('#f-upnl').value = '0';
+  updateForm();
+}
+
+// =====================================================================
+// 입력 화면 실시간 갱신
+// =====================================================================
+function updateForm(){
+  if (!F) return;
+  if (F.kind === 'record') updRecord();
+  if (F.kind === 'new') updNew();
+  if (F.kind === 'add') updAdd();
+  if (F.kind === 'balance') updBalance();
+}
+function setQty(price){
+  const q = qtyFromNotional(F.mlc.c, price);
+  $('#f-qty').textContent = qtyFmt(q);
+  $('#f-base').textContent = baseOf(F.symbol || 'BTCUSDT');
+  return q;
+}
+
+function updRecord(){
+  applyMLC();
+  const entry = parseNum($('#f-entry').value);
+  setQty(entry);
+  const existing = findPos(F.ex, F.symbol);
+  $('#f-pairnote').innerHTML = existing
+    ? `<div class="notice">${exName(F.ex)}에 이미 ${esc(F.symbol)} 포지션 기록이 있어요. 저장하면 기존 기록을 덮어써요.</div>` : '';
+  const others = positionsOf(F.ex).filter(p => p.symbol !== F.symbol);
+  $('#f-upnl-hint').textContent = others.length
+    ? `이 거래소에 다른 포지션(${others.map(p => p.symbol).join(', ')})도 있으니, 포지션 화면의 손익을 모두 더한 합계를 입력하세요. 손실이면 마이너스(-)`
+    : '포지션 화면의 손익(PnL)을 같은 순간에 보고 입력하세요. 손실이면 마이너스(-)';
+  $('#f-wallet').textContent = money(walletFromTotal(parseNum($('#f-total').value), parseNum($('#f-upnl').value)));
+}
+
+function updBalance(){
+  $('#f-wallet').textContent = money(walletFromTotal(parseNum($('#f-total').value), parseNum($('#f-upnl').value)));
+}
+
+// 가용 금액 계산 과정 표시 (사용자가 어떻게 나온 숫자인지 이해할 수 있게)
+function availHTML(label, equity, parts, avail, warnMsg){
+  const calc = isNum(equity)
+    ? `순자산 ${money(equity)} ${parts.map(([l, v]) => `− ${l} ${money(v)}`).join(' ')} = ${money(avail)}`
+    : '순자산을 계산할 수 없어요 (현재가 또는 지갑 잔고 필요)';
+  return `<div class="pv-row"><span>${label}</span><b class="${isNum(avail) && avail < 0 ? 'down' : ''}">${money(avail)} USDT</b></div>
+    <p class="calc">${calc}</p>
+    <p class="tiny">순자산 = 지갑 잔고 + 미실현 손익. 거래소에 보이는 '사용 가능' 금액과는 수수료·안전 버퍼 때문에 조금 다를 수 있어요.</p>
+    ${isNum(avail) && avail < 0 ? `<div class="warn">${warnMsg}</div>` : ''}`;
+}
+function liqRowHTML(label, liq, ref, refName){
+  const dist = liq.status === 'ok' ? distancePct(ref, liq.price) : NaN;
+  return `<div class="pv-row"><span>${label}</span><b>${liqText(liq)}${isNum(dist) ? ` <span class="muted">(${refName}에서 ${pctFmt(dist)})</span>` : ''}</b></div>`;
+}
+
+function updNew(){
+  applyMLC();
+  const saveBtn = $('#f-save');
+  const existing = findPos(F.ex, F.symbol);
+  $('#f-pairnote').innerHTML = existing
+    ? `<div class="warn">이미 포지션이 있습니다. 추가 진입으로 전환할까요?</div>
+       <button class="primary" data-switch="add" data-pos="${esc(existing.id)}">추가 진입으로 전환</button>` : '';
+  saveBtn.disabled = !!existing;
+
+  const exList = positionsOf(F.ex).filter(p => p.symbol !== F.symbol);
+  const hasOthers = exList.length > 0;
+  const stored = data.exchanges[F.ex].wallet;
+  $('#f-balwrap').hidden = hasOthers;
+  $('#f-balinfo').innerHTML = hasOthers
+    ? `<div class="ro">같은 거래소에 다른 포지션이 있어 저장된 지갑 잔고 <b>${isNum(stored) ? money(stored) : '없음'}</b> USDT를 사용해요</div>` : '';
+  const wallet = hasOthers ? (isNum(stored) ? stored : NaN) : parseNum($('#f-bal').value);
+
+  const entry = parseNum($('#f-entry').value);
+  const { a, b, c } = F.mlc;
+  const qty = setQty(entry);
+  const pv = $('#f-preview');
+  if (!isPos(entry) || !isPos(a) || !isPos(b) || !isPos(c) || !isPos(qty)){
+    pv.innerHTML = '<div class="pv-title">미리보기</div><p class="tiny">진입 예정가와 [마진 × 레버리지 = 포지션 규모] 중 두 칸을 입력하면 여기에 결과가 나와요.</p>';
+    return;
+  }
+  const m = data.exchanges[F.ex].mmr;
+  const liq = estimateLiq({ side: F.side, mode: F.mode, entry, qty, lev: b, margin: a }, exList, wallet, m);
+  let equity = wallet;
+  if (hasOthers) equity = exchangeView(F.ex).equity;
+  const otherMargin = exList.reduce((s, p) => s + p.margin, 0);
+  const avail = isNum(equity) ? equity - otherMargin - a : NaN;
+  pv.innerHTML = `<div class="pv-title">미리보기</div>
+    <div class="pv-main">${mlcText(a, b, c, qty, F.symbol)}</div>
+    ${liqRowHTML('예상 청산가', liq, entry, '진입가')}
+    <p class="tiny">${LIQ_NOTE}</p>
+    ${availHTML('진입 후 가용 금액', equity, hasOthers ? [['기존 증거금', otherMargin], ['이번 마진', a]] : [['이번 마진', a]], avail, '잔고가 부족해 주문이 거부될 수 있습니다')}
+    <div class="guide">거래소 주문 화면에는 수량 <b>${qtyFmt(qty)} ${esc(baseOf(F.symbol))}</b> 또는 주문 금액 <b>${money(c)} USDT</b>로 입력하세요</div>`;
+}
+
+function updAdd(){
+  applyMLC();
+  const p = data.positions.find(x => x.id === F.posId);
+  if (!p) return;
+  $('#f-cur').innerHTML = `현재 포지션: <b>${mlcText(p.margin, p.lev, p.notional, p.qty, p.symbol)}</b><br>평균 진입가 <b>${money(p.entry)}</b> · 현재가 <b>${money(priceOf(p.ex, p.symbol))}</b>`;
+  const addPrice = parseNum($('#f-entry').value);
+  const { a, b, c } = F.mlc;
+  const addQty = setQty(addPrice);
+  const pv = $('#f-preview');
+  const merged = isPos(a) && isPos(c) ? mergePosition(p.entry, p.qty, addPrice, addQty, b) : null;
+  if (!merged){
+    pv.innerHTML = '<div class="pv-title">미리보기</div><p class="tiny">추가 진입가와 [마진 × 레버리지 = 포지션 규모] 중 두 칸을 입력하면 여기에 결과가 나와요.</p>';
+    return;
+  }
+  const x = data.exchanges[p.ex];
+  const wallet = isNum(x.wallet) ? x.wallet : NaN;
+  const others = positionsOf(p.ex).filter(o => o.id !== p.id);
+  const after = { ...p, entry: merged.avg, qty: merged.qty, lev: b, margin: merged.margin };
+  const liqBefore = estimateLiq(p, others, wallet, x.mmr);
+  const liqAfter = estimateLiq(after, others, wallet, x.mmr);
+  const cur = priceOf(p.ex, p.symbol);
+  const ref = isPos(cur) ? cur : addPrice;
+  const othersPnl = others.map(o => unrealizedPnl(o.side, o.entry, priceOf(o.ex, o.symbol), o.qty));
+  const equityAfter = equityOf(wallet, [...othersPnl, unrealizedPnl(p.side, merged.avg, ref, merged.qty)]);
+  const otherMargin = others.reduce((s, o) => s + o.margin, 0);
+  const availAfter = isNum(equityAfter) ? equityAfter - otherMargin - merged.margin : NaN;
+  const levChanged = Math.abs(b - p.lev) > 1e-9;
+  pv.innerHTML = `<div class="pv-title">미리보기</div>
+    <div class="pv-main">추가분: ${mlcText(a, b, c, addQty, p.symbol)}</div>
+    <div class="pv-row"><span>합친 수량</span><b>${qtyFmt(merged.qty)} ${esc(baseOf(p.symbol))}</b></div>
+    <p class="calc">기존 ${qtyFmt(p.qty)} + 추가 ${qtyFmt(addQty)}</p>
+    <div class="pv-row"><span>평균 진입가</span><b>${money(merged.avg)}</b></div>
+    <div class="pv-row"><span>합친 포지션 규모</span><b>${money(merged.notional)} USDT</b></div>
+    <div class="pv-row"><span>전체 증거금 (레버리지 ${levFmt(b)}배 기준)</span><b>${money(merged.margin)} USDT</b></div>
+    ${levChanged ? '<div class="warn">레버리지를 바꾸면 기존 포지션에도 새 레버리지가 적용됩니다</div>' : ''}
+    ${liqRowHTML('추가 전 예상 청산가', liqBefore, ref, '현재가')}
+    ${liqRowHTML('추가 후 예상 청산가', liqAfter, ref, '현재가')}
+    <p class="tiny">${LIQ_NOTE}</p>
+    ${availHTML('추가 후 가용 금액', equityAfter, others.length ? [['다른 포지션 증거금', otherMargin], ['이 포지션 전체 증거금', merged.margin]] : [['이 포지션 전체 증거금', merged.margin]], availAfter, '가용 금액이 부족해 주문이 거부될 수 있습니다')}
+    <div class="guide">거래소 주문 화면에는 수량 <b>${qtyFmt(addQty)} ${esc(baseOf(p.symbol))}</b> 또는 주문 금액 <b>${money(c)} USDT</b>로 입력하세요</div>`;
+}
+
+// =====================================================================
+// 저장
+// =====================================================================
+function showErr(list){
+  $('#f-err').innerHTML = list.length ? `<div class="warn">${list.map(esc).join('<br>')}</div>` : '';
+  if (list.length) $('#f-err').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  return list.length === 0;
+}
+function mlcErrors(entryLabel, entry){
+  const errs = [];
+  if (!validSymbol(F.symbol)) errs.push('종목 이름을 확인해 주세요 (예: BTCUSDT)');
+  if (!isPos(entry)) errs.push(`${entryLabel}를 입력해 주세요`);
+  const { a, b, c } = F.mlc;
+  if (!isPos(a) || !isPos(b) || !isPos(c)) errs.push('마진 × 레버리지 = 포지션 규모 중 두 칸을 입력해 주세요');
+  return errs;
+}
+function finishSave(msg){
+  save(); closeSheet(); toast(msg); refreshAll();
+}
+
+function saveForm(){
+  if (!F) return;
+  if (F.kind === 'balance'){
+    const w = walletFromTotal(parseNum($('#f-total').value), parseNum($('#f-upnl').value));
+    if (!showErr(isNum(w) ? [] : ['총자산과 미실현 손익을 입력해 주세요'])) return;
+    data.exchanges[F.ex].wallet = w;
+    return finishSave('잔고를 업데이트했어요');
+  }
+  const entry = parseNum($('#f-entry').value);
+  const { a, b, c } = F.mlc;
+  if (F.kind === 'record'){
+    const errs = mlcErrors('진입가', entry);
+    const w = walletFromTotal(parseNum($('#f-total').value), parseNum($('#f-upnl').value));
+    if (!isNum(w)) errs.push('총자산과 미실현 손익을 입력해 주세요');
+    if (!showErr(errs)) return;
+    const existing = findPos(F.ex, F.symbol);
+    if (existing && !confirm('이미 기록된 포지션이 있어요. 기존 기록을 덮어쓸까요?')) return;
+    data.positions = data.positions.filter(p => !(p.ex === F.ex && p.symbol === F.symbol));
+    data.positions.push({ id: uid(), ex: F.ex, symbol: F.symbol, side: F.side, mode: F.mode, entry, qty: c / entry, lev: b, margin: a, notional: c, updatedAt: Date.now() });
+    data.exchanges[F.ex].wallet = w;
+    return finishSave('포지션을 기록했어요');
+  }
+  if (F.kind === 'new'){
+    const errs = mlcErrors('진입 예정가', entry);
+    if (findPos(F.ex, F.symbol)) errs.push('이미 포지션이 있어요. 추가 진입을 이용해 주세요');
+    const hasOthers = positionsOf(F.ex).some(p => p.symbol !== F.symbol);
+    const bal = parseNum($('#f-bal').value);
+    if (!hasOthers && !isNum(bal)) errs.push('현재 잔고를 입력해 주세요');
+    if (hasOthers && !isNum(data.exchanges[F.ex].wallet)) errs.push('이 거래소의 지갑 잔고가 없어요. [잔고 업데이트]를 먼저 해주세요');
+    if (!showErr(errs)) return;
+    if (!hasOthers) data.exchanges[F.ex].wallet = bal;
+    data.positions.push({ id: uid(), ex: F.ex, symbol: F.symbol, side: F.side, mode: F.mode, entry, qty: c / entry, lev: b, margin: a, notional: c, updatedAt: Date.now() });
+    return finishSave('신규 포지션을 저장했어요');
+  }
+  if (F.kind === 'add'){
+    const p = data.positions.find(x => x.id === F.posId);
+    const errs = mlcErrors('추가 진입가', entry);
+    const merged = p && errs.length === 0 ? mergePosition(p.entry, p.qty, entry, c / entry, b) : null;
+    if (!merged && !errs.length) errs.push('값을 확인해 주세요');
+    if (!showErr(errs)) return;
+    Object.assign(p, { entry: merged.avg, qty: merged.qty, lev: b, margin: merged.margin, notional: merged.notional, updatedAt: Date.now() });
+    return finishSave('추가 진입을 저장했어요');
+  }
+}
+
+// =====================================================================
+// 시작
+// =====================================================================
+renderMain();
+refreshAll();
+setInterval(refreshAll, 30000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshAll(); });
+</script>
+</body>
+</html>
